@@ -1,0 +1,211 @@
+初次使用命令行模式时，需要以下操作
+初次使用会创建一个.git 目录 将会你变更的文件以copy形式存入.git中
+
+git config --global user.name "John Doe”
+git config --global user.email johndoe@example.com
+git config --global —list # 查看本地的全局name和email等信息，用作变更前查看等
+
+<font color=#ff0000>git的基本操作</font>
+git init #本地仓库初始化
+git add <file> #添加要同步的文件，如果该目录下都要同步的话 改用参数—all 或 . (.代表当前目录内所有文件以及子文件等)
+git commit -m '注释说明' #提交到缓存区域
+git push #同步到GITLAB(GIT服务器)
+git status # 查看当前git状态 如果有修改未提交的将会以红色字体显示，修改提交未push的将以绿色字体显示
+git log # 查看提交记录，即：历史版本记录
+git clone git@172.31.102.247:devops/cloudweb.git #从远程服务器(172.31.102.247)git到本地
+git remote #查看远程库信息(git remote -v#更详细的信息)
+git checkout -b dev #创建dev分支并切换到dev分支上
+git checkout master #切换到master上
+git branch #查看当前所有分支
+git merge dev #把dev合并到当前分支(master)
+git branch -d dev #删除dev分支
+git push origin dev #将dev推送到远程
+git checkout -b dev origin/dev #远程同步类似
+git push origin branch-name #从本地推送分支
+
+
+<font color=#ff0000>回滚到指定版本</font>
+git log # 获取要回滚到commit 值
+git reset —hard commit值
+
+
+<font color=#ff0000>回滚后在回滚回来</font>
+git reflog # 如果log中查看不到 就去隐藏的reflog中查找
+git reset —hard commit值
+
+
+<font color=#ff0000>stash的使用</font>
+    说明：用于将工作区发生变化的所有文件获取临时存储在“某个地方”，将工作区还原当前版本未操作前的状态；还可以将临时存储在“某个地方”的文件再次拿回到工作区
+
+git status
+On branch master
+Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+     modified:   app01/views.py
+no changes added to commit (use "git add" and/or "git commit -a")
+git stash # 将开发到一半的直播功能，临时存储到“某个地方”
+git status # 工作区回到当前版本未做任何操作前
+Vim pondo/settings.py # 这里做紧急修复bug等事情
+git status 查看只有上边操作的文件状态
+git add .
+git  commit -m '紧急修复bug’
+git stash pop # 将之前开发的功能从“某个地方” 再次拿回工作区继续
+
+⚠️：执行 git stash pop 命令时，可能会遇到冲突，因为在紧急修复bug的代码和通过stash存储在“某个地方”的代码会重合部分，所以执行git stash pop时候会出现冲突，有冲突解决冲突即可
+
+git stash 相关命令罗列：
+* git stash             将当前工作区所有修改过的内容存储到“某个地方”，将工作区还原到当前版本未修改过的状态
+* git stash list        查看“某个地方”存储的所有记录
+* git stash clear     清空“某个地方”
+* git stash pop       将第一个记录从“某个地方”重新拿到工作区（可能有冲突）
+* git stash apply     编号, 将指定编号记录从“某个地方”重新拿到工作区（可能有冲突）
+* git stash drop      编号，删除指定编号的记录
+
+
+<font color=#ff0000>branch的使用</font>
+    说明：分支，默认仅有一个名为master分支，一半开发新功能流程为：开发新功能时在分支dev上进行，开发完毕后在合并到master分支上
+git branch dev #创建新分支，即：拷贝一份当前所在分支代码到新分支
+git checkout dev # 切换到dev分支
+# 做一些修改然后进行commit提交
+git checkout master # 切回到master分支
+git merge dev # 将dev分支内容合并到master分支
+
+
+<font color=#ff0000>开发流程</font>
+git branch # 当前在master分支
+git branch dev # 创建dev分支用于开发新功能
+git checkout dev #切换到dev分支
+Vim app01/views.py
+git add .
+git commit -m ‘新功能开发一半’
+git checkout master
+git branch bug # 创建bug分支
+git checkout bug # 切换到bug分支
+vim pondo/settings.py # 修改bug
+git add .
+git commit -m '紧急修改bug’
+git checkout master
+git merge bug #将bug分支内容合并到master分支，表示bug修复完毕，可以上线
+git checkout dev # 切换到dev分支，继续开发新功能
+vim app01/views.py # 继续开发其他一半功能
+git add .
+git  commit -m '继续开发完成’  # 提交功能
+git checkout master # 切换回master分支
+git merge dev #将dev分支合并到master分支
+
+⚠️ : git merge 时也可能回出现冲突，解决冲突方式与上述stash相同 即：找到冲突文件手动修改冲突并提交
+git branch 相关命令罗列：
+* git branch 分支名称             创建分支
+* git checkout 分支名称          切换分支
+* git branch -m 分支名称        创建并切换到指定分支
+* git branch                          查看所有分支
+* git branch -d 分支名称         删除分支
+* git merge 分支名称              将指定分支合并到当前分支
+
+
+<font color=#ff0000>代码远程推送</font>
+git remote add origin https://github.com/balabal/pondo.git # 为地址起一个别名叫origin
+git push origin master # 将本地master分支内容以及版本信息推送到GitHub上
+Username : #输入github用户名
+Password: # 输入github密码
+git push origin dev # 将本地dev分支内容以及版本信息推送到GitHub
+
+
+<font color=#ff0000>一次新电脑开发流程(没有任何git记录)：</font>
+git clone https://github.com/balabala/pondo.git # 将项目从GitHub中获取
+cd pondo/
+git branch # 默认获取到的只有master分支
+git branch dev origin/dev # 创建dev分支且和远程dev分支同步
+git checkout dev # 切换到dev分支
+vim app01/views.py # 继续开发新功能
+git add . # 添加文件到版本库的暂存状态
+git commit -m '公司开发功能1’ # 提交新功能到版本库分支
+git push origin dev # 提交dev分支内容到远程GitHub托管仓库的dev
+
+
+<font color=#ff0000>继续使用旧电脑开发(基于以前的但并不是最新的)：</font>
+git checkout dev # 切换到dev分支
+git pull origin dev # 从远程GitHub仓库获取dev分支
+vim app01/views.py # 继续开发新功能
+git add . # 添加文件到版本库的暂存状态
+git commit -m ‘旧电脑开发功能’ # 提交功能到版本库的分支
+
+
+<font color=#ff0000>再次回到新电脑上继续开发：</font>
+git checkout dev # 切换到dev分支
+git fetch origin dev # 从GitHub仓库获取dev分支最新内容到版本库的分支
+git merge origin/dev # 将版本库的分支内容合并到工作区
+vim app01/views.py # 继续开发新功能
+git add .
+git commit -m ‘新功能完事’ # 提交新功能到版本库的分支
+
+⚠️：上文执行过程中执行 【git pull origin 分支】命令等同于【git fetch origin 分支】+ 【git merge origin/分支】，并且在执行过程中可能会出现冲突，原因是由于本地代码和获取的最新代码有重合部分，那么就需要自己手动解决冲突然后再继续开发。
+
+<font color=#ff0000>多人协作问题：</font>
+协同开发命令和以上步骤类似，此处就不再重新写代码，而是使用文件描述三人协同开发整个过程。
+* 创建程序
+    * 用户A创建程序，提交到GitHub
+    * 用户B克隆项目
+    * 用户C克隆项目
+* 开发功能
+    * 用户A开发功能1
+    * 用户B开发功能2
+    * 用户C开发功能3
+* 提交
+    * 用户A提交功能1，并push（A用户手速快，先提交。）
+    * 用户B提交功能2，无法push，因为GitHub上已经有其他人提交的新代码。
+解决方法：从GitHub上获取最新代码并合并到本地，提交自己开发的功能2。
+    * 用户C提交功能3，无法push，无法提交，因为GitHub上已经有其他人提交的新代码。
+解决方法：从GitHub上获取最新代码并合并到本地，提交自己开发的功能3。
+* 获取最新代码
+    * 用户A获取最新代码
+    * 用户B获取最新代码
+    * 用户C获取最新代码
+在上面红色标注的解决方法位置可以有三种方式操作，三者都可以完成合并并提交新功能，但是日志记录会有差异，如：前两者版本记录中会出现合并，而第三种可以保证版本记录干净整洁。
+* 先 git pull origin master   然后 git push origin master
+* 先 git fetch origin master 然后 git merge origin/master   再 git push origin master
+
+用户A：
+    touch 4.py
+    git add .
+    git commit -m ‘功能4’
+    git push origin master
+用户B：
+    touch 5.py
+    git add .
+    git commit -m ‘功能5’
+    git push origin master # 报错， 因为GitHub中已经有人提交新代码
+    # 提交方式 避免分支乱差
+    git fetch origin master
+    git rebase origin/master
+    git push origin master
+
+
+
+<font color=#ff0000>用户凭证： 解去GitHub提交时频繁输入用户名密码</font>
+* 秘钥
+首先创建一对秘钥  ssh-keygen -t rsa，然后将 id_rsa.pub (公钥)内容拷贝到github中，日后操作无需再输入用户名和密码。
+注意：这种方式需要使用GIt中 git@github.com:WuPeiqi/xxxxx.git 格式地址。
+* 密码
+Https访问git时，避免每次操作需要输入用户名和密码，可以在配置文件中添加如下配置项：
+    [credential]
+    helper = store/cache/第三方
+ store:
+        表示将用户名和密码保存在硬盘上
+        第一次输入过用户名和密码之后，用户名和密码就会保存在当前用户根目录的 .git-credentials 文件中，内容格式为：https://用户名:密码@github.com
+        自动添加配置命令：git config credential.helper store
+                cache:
+        表示将用户名和密码保存在缓存中
+        第一次输入过用户名和密码之后，用户名和密码就会保存在缓存中，默认超时时间是 900 秒，缓存相关文件保存在当前用户根目录的 git-credential-cache 中
+        自动添加配置命令：
+               git config credential.helper cache
+               git config credential.helper 'cache --timeout=300'
+                    相关操作：
+        清除缓存：git credential-cache exit
+        指定超时：
+            [credential]
+            helper = cache --timeout=300
+注意：
+         这种方式需要使用GIt中 https://github.com/WuPeiqi/xxxx.git 格式地址。
+         指定用户名和密码： https://用户名:密码@github.com/wupeiqi/xxx.git
