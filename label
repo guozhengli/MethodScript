@@ -1,1 +1,6 @@
 Python
+命名空间     --      python之禅，命名空间，闭包函数
+decorator   --      装饰器
+生成器       --      yield
+递归         --      递归- 函数调用自身
+常用内置函数和匿名函数      --     lambda,zip,filter,map,min,max,sorted
