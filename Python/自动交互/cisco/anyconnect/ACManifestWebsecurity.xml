@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vpn rev="1.0">
+  <file version="4.6.00362" id="WebSecurity" is_core="no" type="dmg" action="install" module="webecurity">
+    <uri>binaries/anyconnect-macos-4.6.00362-websecurity-webdeploy-k9.dmg</uri>
+    <display-name>AnyConnect Web Security</display-name>
+  </file>
+</vpn>

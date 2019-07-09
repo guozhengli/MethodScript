@@ -23,12 +23,12 @@ import time
 #
 #
 # def witer(f):
-#     def inter():
-#         start = time.time()
-#         f()
-#         end = time.time()
-#         print(end - start)
-#     return inter
+# #     def inter():
+# #         start = time.time()
+# #         f()
+# #         end = time.time()
+# #         print(end - start)
+# #     return inter
 #
 #
 # @witer
@@ -72,7 +72,7 @@ import time
 # ----- start -----
 """
 说明：
-    装饰器带参数的话 可以这么理解就同了
+    装饰器带参数的话 可以这么理解就行了
     同上一个带参数的装饰器。而这个装饰器就是在那个装饰器上边套了一个普通函数。可以将语法糖分解这么看
     @witer_out ==> witer_out = witer(f)
     理解就是将一个最外面函数里面套了一个装饰器
@@ -100,7 +100,6 @@ import time
 
 # func("aa")
 # -----  end  -----
-
 
 # 多装饰器
 # ----- start -----

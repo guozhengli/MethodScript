@@ -1,0 +1,1 @@
+/opt/cisco/hostscan/bin64/posture_uninstall.sh

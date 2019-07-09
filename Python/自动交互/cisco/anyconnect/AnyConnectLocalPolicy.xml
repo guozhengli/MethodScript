@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectLocalPolicy xmlns="http://schemas.xmlsoap.org/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.xmlsoap.org/encoding/ AnyConnectLocalPolicy.xsd" acversion="4.2.01035">
+<BypassDownloader>false</BypassDownloader>
+<ExcludeFirefoxNSSCertStore>false</ExcludeFirefoxNSSCertStore>
+<ExcludeMacNativeCertStore>false</ExcludeMacNativeCertStore>
+<ExcludePemFileCertStore>false</ExcludePemFileCertStore>
+<ExcludeWinNativeCertStore>false</ExcludeWinNativeCertStore>
+<FipsMode>false</FipsMode>
+<RestrictPreferenceCaching>false</RestrictPreferenceCaching>
+<RestrictTunnelProtocols>false</RestrictTunnelProtocols>
+<RestrictWebLaunch>false</RestrictWebLaunch>
+<StrictCertificateTrust>false</StrictCertificateTrust>
+<UpdatePolicy>
+<AllowComplianceModuleUpdatesFromAnyServer>true</AllowComplianceModuleUpdatesFromAnyServer>
+<AllowISEProfileUpdatesFromAnyServer>true</AllowISEProfileUpdatesFromAnyServer>
+<AllowServiceProfileUpdatesFromAnyServer>true</AllowServiceProfileUpdatesFromAnyServer>
+<AllowSoftwareUpdatesFromAnyServer>true</AllowSoftwareUpdatesFromAnyServer>
+<AllowVPNProfileUpdatesFromAnyServer>true</AllowVPNProfileUpdatesFromAnyServer></UpdatePolicy>
+</AnyConnectLocalPolicy>

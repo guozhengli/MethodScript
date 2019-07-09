@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configure xmlns="http://schemas.xmlsoap.org/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://schemas.xmlsoap.org/encoding/ ConfigXMLSchema.xsd">
+  <title>Cisco AnyConnect WebSecurity Module</title>
+  <file id="ws-install">
+    <default>true</default>
+    <description>WebSecurity install logs</description>
+    <gui>
+      <label>_tr("WebSecurity install logs")</label>
+      <file_type>log</file_type>
+    </gui>
+    <dart>
+      <required>false</required>
+	  <os opsys="win8">
+        <file_copy_action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurityCert.cfg</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurity_ServiceProfile.wso</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity.config</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity_config.backup</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Logs\*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%TEMP%\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%WINDIR%\Temp\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="win7">
+        <file_copy_action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurityCert.cfg</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurity_ServiceProfile.wso</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity.config</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity_config.backup</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Logs\*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%TEMP%\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%WINDIR%\Temp\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="vista">
+        <file_copy_action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurityCert.cfg</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurity_ServiceProfile.wso</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity.config</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity_config.backup</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Logs\*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%TEMP%\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%WINDIR%\Temp\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="winxp">
+        <file_copy_action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurityCert.cfg</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurity_ServiceProfile.wso</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity.config</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity_config.backup</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Logs\*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%TEMP%\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%WINDIR%\Temp\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="win2k3">
+        <file_copy_action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurityCert.cfg</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\WebSecurity_ServiceProfile.wso</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity.config</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Config\WebSecurity_config.backup</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>%ALLUSERSPROFILE%\Application Data\Cisco\Cisco AnyConnect Secure Mobility Client\Web Security\Logs\*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%TEMP%\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc>%WINDIR%\Temp\anyconnect-websecurity-*.log</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="mac">
+        <file_copy_action>
+          <action>
+            <loc>/opt/cisco/anyconnect/websecurity/WebSecurityCert.cfg</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>/opt/cisco/anyconnect/websecurity/WebSecurity_ServiceProfile.wso</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+          <action>
+            <loc>/opt/cisco/anyconnect/websecurity/config/*</loc>
+            <clear_log apply="false"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+    </dart>
+  </file>
+  <file id="ws-dmp">
+    <default>true</default>
+    <description>WebSecurity dump files</description>
+    <gui>
+      <label>_tr("WebSecurity dump files")</label>
+      <file_type>log</file_type>
+    </gui>
+    <dart>
+      <required>false</required>
+	  <os opsys="win8">
+        <file_copy_action>
+          <action>
+            <loc gather_newest="true">%WINDIR%\Temp\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">%TEMP%\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="win7">
+        <file_copy_action>
+          <action>
+            <loc gather_newest="true">%WINDIR%\Temp\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">%TEMP%\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="vista">
+        <file_copy_action>
+          <action>
+            <loc gather_newest="true">%WINDIR%\Temp\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">%TEMP%\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="winxp">
+        <file_copy_action>
+          <action>
+            <loc gather_newest="true">%WINDIR%\Temp\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">%TEMP%\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="win2k3">
+        <file_copy_action>
+          <action>
+            <loc gather_newest="true">%WINDIR%\Temp\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">%TEMP%\acwebsec*.mdmp</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+      </os>
+      <os opsys="mac">
+        <file_copy_action>
+          <action>
+            <loc gather_newest="true">$HOME/Library/Logs/CrashReporter/acobfuscate_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">$HOME/Library/Logs/CrashReporter/acwebsecagent_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">/System/Library/Logs/CrashReporter/acobfuscate_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">/System/Library/Logs/CrashReporter/acwebsecagent_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">$HOME/Library/Logs/DiagnosticReports/acobfuscate_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">$HOME/Library/Logs/DiagnosticReports/acwebsecagent_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">/Library/Logs/DiagnosticReports/acobfuscate_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+          <action>
+            <loc gather_newest="true">/Library/Logs/DiagnosticReports/acwebsecagent_*</loc>
+            <clear_log apply="true"></clear_log>
+          </action>
+        </file_copy_action>
+	  </os>
+    </dart>
+  </file>
+  <file id="ws-logs">
+    <default>true</default>
+    <description>WebSecurity application logs</description>
+    <gui>
+      <label>_tr("WebSecurity application logs")</label>
+      <file_type>log</file_type>
+    </gui>
+    <dart>
+      <required>false</required>
+	  <os opsys="win8">
+        <use_extern_action>
+          <action>
+            <plugin></plugin>
+            <args>wineventlog.exe -l "Cisco AnyConnect Web Security Module" -f %TEMP%\WebSecurity.txt</args>
+            <clear_log apply="false"></clear_log>
+            <temp_out>%TEMP%\WebSecurity.txt</temp_out>
+          </action>
+          <action>
+            <path>%WINDIR%\system32</path>
+            <args>wevtutil epl "Cisco AnyConnect Web Security Module" %TEMP%\WebSecurity.evtx</args>
+            <clear_log apply="true">wevtutil cl "Cisco AnyConnect Web Security Module"</clear_log>
+            <temp_out>%TEMP%\WebSecurity.evtx</temp_out>
+          </action>
+        </use_extern_action>
+      </os>
+      <os opsys="win7">
+        <use_extern_action>
+          <action>
+            <plugin></plugin>
+            <args>wineventlog.exe -l "Cisco AnyConnect Web Security Module" -f %TEMP%\WebSecurity.txt</args>
+            <clear_log apply="false"></clear_log>
+            <temp_out>%TEMP%\WebSecurity.txt</temp_out>
+          </action>
+          <action>
+            <path>%WINDIR%\system32</path>
+            <args>wevtutil epl "Cisco AnyConnect Web Security Module" %TEMP%\WebSecurity.evtx</args>
+            <clear_log apply="true">wevtutil cl "Cisco AnyConnect Web Security Module"</clear_log>
+            <temp_out>%TEMP%\WebSecurity.evtx</temp_out>
+          </action>
+        </use_extern_action>
+      </os>
+      <os opsys="vista">
+        <use_extern_action>
+          <action>
+            <plugin></plugin>
+            <args>wineventlog.exe -l "Cisco AnyConnect Web Security Module" -f %TEMP%\WebSecurity.txt</args>
+            <clear_log apply="false"></clear_log>
+            <temp_out>%TEMP%\WebSecurity.txt</temp_out>
+          </action>
+          <action>
+            <path>%WINDIR%\system32</path>
+            <args>wevtutil epl "Cisco AnyConnect Web Security Module" %TEMP%\WebSecurity.evtx</args>
+            <clear_log apply="true">wevtutil cl "Cisco AnyConnect Web Security Module"</clear_log>
+            <temp_out>%TEMP%\WebSecurity.evtx</temp_out>
+          </action>
+        </use_extern_action>
+      </os>
+      <os opsys="winxp">
+        <use_extern_action>
+          <action>
+            <plugin></plugin>
+            <args>wineventlog.exe -l "Cisco AnyConnect Web Security Module" -f %TEMP%\WebSecurity.txt</args>
+            <clear_log apply="false"></clear_log>
+            <temp_out>%TEMP%\WebSecurity.txt</temp_out>
+          </action>
+          <action>
+            <path>%WINDIR%\system32\wbem</path>
+            <args>wmic.exe nteventlog where " logfilename='Cisco AnyConnect Web Security Module' " call backupeventlog "%TEMP%\WebSecurity.evt"</args>
+            <clear_log apply="true">wmic.exe nteventlog where " logfilename='Cisco AnyConnect Web Security Module' " call ClearEventLog</clear_log>
+            <temp_out>%TEMP%\WebSecurity.evt</temp_out>
+          </action>
+        </use_extern_action>
+      </os>
+      <os opsys="win2k3">
+        <use_extern_action>
+          <action>
+            <plugin></plugin>
+            <args>wineventlog.exe -l "Cisco AnyConnect Web Security Module" -f %TEMP%\WebSecurity.txt</args>
+            <clear_log apply="false"></clear_log>
+            <temp_out>%TEMP%\WebSecurity.txt</temp_out>
+          </action>
+          <action>
+            <path>%WINDIR%\system32\wbem</path>
+            <args>wmic.exe nteventlog where " logfilename='Cisco AnyConnect Web Security Module' " call backupeventlog "%TEMP%\WebSecurity.evt"</args>
+            <clear_log apply="true">wmic.exe nteventlog where " logfilename='Cisco AnyConnect Web Security Module' " call ClearEventLog</clear_log>
+            <temp_out>%TEMP%\WebSecurity.evt</temp_out>
+          </action>
+        </use_extern_action>
+      </os>
+    </dart>
+  </file>
+</configure>
+

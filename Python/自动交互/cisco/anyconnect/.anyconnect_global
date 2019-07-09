@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectPreferences>
+<DefaultUser></DefaultUser>
+<DefaultSecondUser></DefaultSecondUser>
+<ClientCertificateThumbprint></ClientCertificateThumbprint>
+<MultipleClientCertificateThumbprints></MultipleClientCertificateThumbprints>
+<ServerCertificateThumbprint></ServerCertificateThumbprint>
+<DefaultHostName>119.254.149.68</DefaultHostName>
+<DefaultHostAddress>119.254.149.68:443</DefaultHostAddress>
+<DefaultGroup></DefaultGroup>
+<ProxyHost></ProxyHost>
+<ProxyPort></ProxyPort>
+<SDITokenType>none</SDITokenType>
+<ControllablePreferences>
+<AutoConnectOnStart>true</AutoConnectOnStart>
+<LocalLanAccess>true</LocalLanAccess>
+<DisableCaptivePortalDetection>false</DisableCaptivePortalDetection></ControllablePreferences>
+</AnyConnectPreferences>

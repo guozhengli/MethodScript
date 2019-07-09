@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>投票系统:参与投票的人</h1>
+    <ul>
+        {% for k,v in users.items() %}
+            <li id="user_{{k}}" ondblclick="vote('{{k}}')">{{v.name}} <span>{{v.count}}</span> </li>
+        {% endfor %}
+
+    </ul>
+    <script src="{{ url_for('static',filename='jquery-3.3.1.min.js')}}"></script>
+    <script>
+        var socket = new WebSocket("ws://192.168.11.143:5000/message");
+
+        socket.onmessage = function (event) {
+            /* 服务器端向客户端发送数据时，自动执行 */
+            var response = JSON.parse(event.data); // {'user':1,'count':new}
+            if(response.type == 'vote'){
+                var nid = '#user_' + response.user_id;
+                $(nid).find('span').text(response.count)
+            }else{
+                alert(response.data);
+            }
+
+        };
+
+        /*
+        我要给某人投票
+         */
+         function vote(id) {
+            socket.send(id);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vpn rev="1.0">
+  <file version="4.6.00362" id="VPNCore" is_core="yes" type="dmg" action="install">
+    <uri>binaries/anyconnect-macos-4.6.00362-core-vpn-webdeploy-k9.dmg</uri>
+    <display-name>AnyConnect Secure Mobility Client</display-name>
+  </file>
+</vpn>
