@@ -1,0 +1,18 @@
+
+// 将设置放入此文件中以覆盖默认设置
+{
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 14,
+    "debug.allowBreakpointsEverywhere": true,
+
+    // // 自定义要在 OS X 上运行的终端应用程序。
+    // "terminal.external.osxExec": "iterm.app",
+
+// Go configuration
+    // Specifies the GOPATH to use when no environment variable is set.
+    // 这是我个人的 GOPATH, 设置2个, 首个为 lib 路径, 次个为个人开发工作区
+    "go.gopath": "/Users/ligz01/go:/Users/ligz01/share/MethodScript/Golang",
+     // Specifies the GOROOT to use when no environment variable is set.
+     "go.goroot": "/usr/local/go",
+    "workbench.statusBar.visible": false
+}
