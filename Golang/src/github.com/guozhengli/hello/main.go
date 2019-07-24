@@ -25,8 +25,25 @@ func main() {
 	//fmt.Println("a3: ", a3)
 	//fmt.Println("a4: ", a4)
 
-	fmt.Println(KB)
-	fmt.Println(MB)
-	fmt.Println(GB)
-	fmt.Println(TB)
+	// fmt.Println(KB)
+	// fmt.Println(MB)
+	// fmt.Println(GB)
+	// fmt.Println(TB)
+
+	// var a = make([]string, 5, 10)
+	// for i := 0; i < 10; i++ {
+	// 	a = append(a, fmt.Sprintf("%v", i))
+	// }
+	// fmt.Println(a)
+
+	var badMap1 = map[int]string{}
+	fmt.Printf("%v", badMap1)
+
+	var map2 = map[interface{}]int{
+		"aa": 1,
+		"bb": 2,
+		3:    3,
+	}
+	fmt.Printf("%v", map2)
+
 }

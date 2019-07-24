@@ -14,7 +14,7 @@
             "env": {
                 "GOPATH": "/Users/ligz01/share/MethodScript/Golang"
             },
-            "args": ["-name","cccc"]
+            "args": ["-name","ligz"]
         }
     ]
 }
